@@ -70,6 +70,7 @@
                           style="position: relative"
                         >
                           <img
+                            v-lazy="item.thumbnail"
                             :src="showenitem[item.id] || item.thumbnail"
                             :style="`width: 100%; height: 200px; cursor:pointer; transition:0.8s; scale: ${
                               isHovering ? 1.05 : 1
@@ -139,9 +140,13 @@
                         v-for="(pic, i) in item.images"
                         :key="i"
                         :value="pic"
-                        style="border-radius: 50%; padding: 2px; margin: 3px"
+                        style="padding: 2px; margin: 3px"
                       >
-                        <img :src="pic" style="width: 30px; height: 30px" />
+                        <img
+                          v-lazy="pic"
+                          :src="pic"
+                          style="width: 30px; height: 30px"
+                        />
                       </v-btn>
                     </v-btn-toggle>
 

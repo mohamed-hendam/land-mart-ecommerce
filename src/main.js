@@ -28,9 +28,16 @@ const vuetify = createVuetify({
   directives,
 });
 
+// VueLazyLoad
+import VueLazyLoad from "vue3-lazyload";
+
 createApp(App)
   .provide("emitter", emitter)
   .use(vuetify)
   .use(createPinia())
   .use(router)
+  .use(VueLazyLoad, {
+    loading: "placeholder.png",
+    error: "placeholder.png",
+  })
   .mount("#app");

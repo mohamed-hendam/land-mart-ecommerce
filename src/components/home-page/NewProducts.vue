@@ -40,7 +40,7 @@
                           style="position: relative"
                         >
                           <img
-                            loading="lazy"
+                            v-lazy="item.thumbnail"
                             :src="
                               showenitem[item.title]
                                 ? showenitem[item.title]
@@ -113,8 +113,11 @@
                         v-for="(pic, i) in item.images"
                         :key="i"
                         :value="pic"
-                        style="border-radius: 50%; padding: 2px; margin: 3px"
-                        ><img :src="pic" style="width: 30px; height: 30px"
+                        style="padding: 2px; margin: 3px"
+                        ><img
+                          v-lazy="pic"
+                          :src="pic"
+                          style="width: 30px; height: 30px"
                       /></v-btn>
                     </v-btn-toggle>
                     <div>
@@ -223,26 +226,6 @@ const breakpoints = ref({
     color: #1d3a73;
     margin: 20px;
   }
-  // .products-swiper {
-  //   .swiper-button-next,
-  //   .swiper-button-prev {
-  //     width: 35px;
-  //     height: 35px;
-  //     top: 40%;
-  //     &::after {
-  //       font-size: 10px;
-  //       background-color: whitesmoke;
-  //       color: #2c3e50;
-  //       padding: 10px;
-  //       border-radius: 50%;
-  //     }
-  //   }
-  //   .swiper-pagination-bullet {
-  //     width: 12px;
-  //     height: 12px;
-  //   }
-  // }
-
   .newbtn {
     width: fit-content;
     padding: 8px;

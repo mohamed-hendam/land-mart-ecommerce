@@ -51,7 +51,7 @@
                       style="position: relative"
                     >
                       <img
-                        loading="lazy"
+                        v-lazy="item.thumbnail"
                         :src="
                           showenitem[item.title]
                             ? showenitem[item.title]
@@ -124,8 +124,11 @@
                     v-for="(pic, i) in item.images"
                     :key="i"
                     :value="pic"
-                    style="border-radius: 50%; padding: 2px; margin: 3px"
-                    ><img :src="pic" style="width: 30px; height: 30px"
+                    style="padding: 2px; margin: 3px"
+                    ><img
+                      v-lazy="pic"
+                      :src="pic"
+                      style="width: 30px; height: 30px"
                   /></v-btn>
                 </v-btn-toggle>
                 <br />
