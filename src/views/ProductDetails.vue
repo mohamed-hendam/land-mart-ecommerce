@@ -9,7 +9,7 @@
         padding: 20px;
       "
     >
-      {{ data.title }} Details
+      {{ data.title }}
     </h1>
     <v-lazy>
       <v-container class="py-10">

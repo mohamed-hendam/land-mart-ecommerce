@@ -50,7 +50,11 @@
                       style="position: relative"
                     >
                       <img
-                        v-lazy="item.thumbnail"
+                        v-lazy="
+                          showenitem[item.title]
+                            ? showenitem[item.title]
+                            : item.thumbnail
+                        "
                         :src="
                           showenitem[item.title]
                             ? showenitem[item.title]

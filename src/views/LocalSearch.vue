@@ -70,8 +70,16 @@
                           style="position: relative"
                         >
                           <img
-                            v-lazy="item.thumbnail"
-                            :src="showenitem[item.id] || item.thumbnail"
+                            v-lazy="
+                              showenitem[item.id]
+                                ? showenitem[item.id]
+                                : item.thumbnail
+                            "
+                            :src="
+                              showenitem[item.id]
+                                ? showenitem[item.id]
+                                : item.thumbnail
+                            "
                             :style="`width: 100%; height: 200px; cursor:pointer; transition:0.8s; scale: ${
                               isHovering ? 1.05 : 1
                             }`"
